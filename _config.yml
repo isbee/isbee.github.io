@@ -41,13 +41,13 @@ links:
   - title: Categories
     url: /categories
   - title: About
-    url: /mino
+    url: /seunghyun
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Seoul
 future:      true
 highlighter: rouge
-markdown:    redcarpet
+markdown:    kramdown
 paginate:    5
 paginate_path: "page:num"
 
