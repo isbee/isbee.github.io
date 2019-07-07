@@ -7,7 +7,7 @@ image:
   feature: seunghyun.jpg
 ---
 
-<img src="{{ site.url }}/images/seunghyun.jpg" alt="Seunghyun Lee">
+<img src="{{ site.url }}/images/seunghyun.jpeg" alt="Seunghyun Lee">
 
 
 2019.02 : Bachelor's degree in Kwangwoon University
