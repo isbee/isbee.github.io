@@ -7,7 +7,7 @@ featured: false
 comments: true
 headline: How to apply custom nginx.conf to Google Cloud Endpoints
 categories: Trouble-shooting
-tags: Trouble-shooting, Google Cloud, Kubernetes, Nginx
+tags: Trouble-shooting Google Cloud Kubernetes Nginx
 ---
 
 ![cover-image](/images/taking-notes.jpg)
@@ -17,7 +17,7 @@ tags: Trouble-shooting, Google Cloud, Kubernetes, Nginx
 ## 문제 상황
 
 1. Google Cloud Endpoint(GKE)에 custom `nginx.conf`를 적용하려고 했다.
-    - 안드로이드 - Endpoint 간 gRPC 통신 과정에서 `FAILED_PRECONDITION: PAYLOAD_TOO_LARGE` 에러가 발생했고, 이것을 해결하려면 `nginx.conf`에 client_max_body_size 값을 바꿔야 했다.
+    - 안드로이드 - Endpoint 간 gRPC 통신 과정에서 `FAILED_PRECONDITION: PAYLOAD_TOO_LARGE` 에러가 발생했고, 이것을 해결하려면 `nginx.conf`에 `client_max_body_size` 값을 바꿔야 했다.
 2. 마침 구글에서 custom `nginx.conf`를 적용하는 [공식 예제](https://cloud.google.com/endpoints/docs/grpc/custom-nginx)를 제공했고, 이것을 활용해서 GKE에 배포했다.
     - 해당 예제는 ESP 시작 옵션과 `volume mount`를 활용하여 local의 `nginx.conf`를 도커 컨테이너에 올리는 방식이었다.
 3. 그런데 쿠버네티스 pod이 `CrashLoopBackOff`를 일으키며 정상적으로 실행되지 않았다.
