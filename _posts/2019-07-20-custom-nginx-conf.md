@@ -146,15 +146,14 @@ tags: Trouble-shooting Google Cloud Kubernetes Nginx
 
         결국 endpoint는 이것을 사용해서 nginx를 설정했던 것이었고, 이 파일의 내용은 구글 예제의 `nginx.conf`와 달랐다. (예제가 참 얄궃다...)
 3. 다음으로 `CrashLoopBackOff` 이 일어났던 pod/container에 접근했더니 아래와 같은 차이점을 발견할 수 있었다.
-    - test
 
-            # nginx.conf가 없다!
-            root@CrashLoopBackOff-pod의-esp-컨테이너:/etc/nginx/endpoints# ls
-            d5b7c75b-3374-5f03-a8f2-45f797213b6d
+        # nginx.conf가 없다!
+        root@CrashLoopBackOff-pod의-esp-컨테이너:/etc/nginx/endpoints# ls
+        d5b7c75b-3374-5f03-a8f2-45f797213b6d
 
-        정상적으로 동작했던 pod/container의 `/endpoints` 경로에 존재했던 `nginx.conf` 파일이, 오류가 일어나는 container에는 없었다.
+    정상적으로 동작했던 pod/container의 `/endpoints` 경로에 존재했던 `nginx.conf` 파일이, 오류가 일어나는 container에는 없었다.
 
-        따라서 없는 파일을 다시 잡아줄 필요가 있었는데, 여러 파일을 사용하는 대신 내가 올리고자 하는 `nginx.conf`로 함께 처리하기로 했다.
+    따라서 없는 파일을 다시 잡아줄 필요가 있었는데, 여러 파일을 사용하는 대신 내가 올리고자 하는 `nginx.conf`로 함께 처리하기로 했다.
 
 ## 문제 해결
 
