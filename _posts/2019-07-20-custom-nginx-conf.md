@@ -144,7 +144,7 @@ tags: Trouble-shooting Google Cloud Kubernetes Nginx
 
         endpoints 폴더에도 `nginx.conf`가 존재했고 (`start_esp`로 자동 생성된 파일), 이 파일에는 gRPC 관련 내용이 들어있었다.
 
-        결국 endpoint는 이것을 사용해서 nginx를 설정했던 것이었고, 이 파일의 내용은 구글 예제의 `nginx.conf`와 달랐다. (예제가 참 얄궃다...)
+        결국 endpoint는 이것을 사용해서 nginx를 설정했던 것이었고, 이 파일의 내용은 구글 예제의 `nginx.conf`와 달랐다. (예제가 참 얄궃다..)
 3. 다음으로 `CrashLoopBackOff` 이 일어났던 pod/container에 접근했더니 아래와 같은 차이점을 발견할 수 있었다.
 
         # nginx.conf가 없다!
