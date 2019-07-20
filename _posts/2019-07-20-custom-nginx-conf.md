@@ -147,7 +147,7 @@ tags: Trouble-shooting Google Cloud Kubernetes Nginx
         결국 endpoint는 이것을 사용해서 nginx를 설정했던 것이었고, 이 파일의 내용은 구글 예제의 `nginx.conf`와 달랐다. (예제가 참 얄궃다...)
 
 3. 다음으로 `CrashLoopBackOff` 이 일어났던 pod/container에 접근했더니 아래와 같은 차이점을 발견할 수 있었다.
-    - ESP 시작 옵션에 `-n=/etc/nginx/custom/nginx.conf`를 주는 순간(`volumne mount`도 함께 사용), `/etc/nginx/endpoints/nginx.config` 가 사라짐
+    - esp 시작 옵션에 `-n=/etc/nginx/custom/nginx.conf`를 주는 순간(`volumne mount`도 함께 사용), `/etc/nginx/endpoints/nginx.config` 가 사라짐
 
             # nginx.conf가 없다!
             root@CrashLoopBackOff-pod의-esp-컨테이너:/etc/nginx/endpoints# ls
