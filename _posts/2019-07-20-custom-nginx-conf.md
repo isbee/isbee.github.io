@@ -25,7 +25,7 @@ tags: Trouble-shooting Google Cloud Kubernetes Nginx
 
 ## 문제 원인
 
-Custom `nginx.conf`를 사용할 경우 ESP 컨테이너 구동시 [start_esp](https://github.com/cloudendpoints/esp/tree/master/start_esp) 스크립트가 실행되지 않으며, 그로인해 endpoints 구성에 필요한 `nginx.config` 파일(server 설정 등을 포함)이 생성되지 않는다.
+*Custom `nginx.conf`를 사용할 경우 ESP 컨테이너 구동시 [start_esp](https://github.com/cloudendpoints/esp/tree/master/start_esp) 스크립트가 실행되지 않으며, 그로인해 endpoints 구성에 필요한 `nginx.config` 파일(server 설정 등을 포함)이 생성되지 않는다.*
 
 1. 쿠버네티스 pod이 정상적으로 실행되지 않는 이유는, 도커 컨테이너의 nginx 엔진이 경로 상의 문제로 `nginx.conf`을 읽지 못했거나/ 구글이 제공한 `nginx.conf` 내용이 틀렸기 때문이라 생각했다.
 2. 따라서 **정상적으로 동작하는** (custom `nginx.conf`를 적용하기 이전, gRPC는 사용 중) pod/container에 접근해서 `nginx.conf` 내용, 디렉토리 위치 등을 확인했다.
@@ -147,7 +147,7 @@ Custom `nginx.conf`를 사용할 경우 ESP 컨테이너 구동시 [start_esp](h
         결국 endpoint는 이것을 사용해서 nginx를 설정했던 것이었고, 이 파일의 내용은 구글 예제의 `nginx.conf`와 달랐다. (예제가 참 얄궃다...)
 
 3. 다음으로 `CrashLoopBackOff` 이 일어났던 pod/container에 접근했더니 아래와 같은 차이점을 발견할 수 있었다.
-    - ESP 시작 옵션에 `-n=/etc/nginx/custom/nginx.conf`를 주는 순간(+ `volumne mount` 사용), `/etc/nginx/endpoints/nginx.config` 가 사라짐
+    - ESP 시작 옵션에 `-n=/etc/nginx/custom/nginx.conf`를 주는 순간(`volumne mount`도 함께 사용), `/etc/nginx/endpoints/nginx.config` 가 사라짐
 
             # nginx.conf가 없다!
             root@CrashLoopBackOff-pod의-esp-컨테이너:/etc/nginx/endpoints# ls
@@ -161,4 +161,4 @@ Custom `nginx.conf`를 사용할 경우 ESP 컨테이너 구동시 [start_esp](h
 
 `start_esp` 로 생성되는 `/etc/nginx/endpoints/nginx.config` 의 내용을 나의 custom `nginx.conf`에 반영하면 더이상 `CrashLoopBackOff`는 발생하지 않았다.
 
-또한 업로드한 custom `nginx.conf`로 `client_max_body_size` 를 변경한 덕분에 gRPC 통신 과정에서 `FAILED_PRECONDITION: PAYLOAD_TOO_LARGE` 에러도 발생하지 않았다.
+또한 업로드한 custom `nginx.conf`로 `client_max_body_size` 를 변경한 덕분에, gRPC 통신 과정에서 `FAILED_PRECONDITION: PAYLOAD_TOO_LARGE` 에러도 발생하지 않았다.
