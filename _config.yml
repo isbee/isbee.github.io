@@ -101,18 +101,8 @@ prose:
           placeholder: "Choose categories"
           value: personal
           options:
-            - name: "Personal"
-              value: personal
-            - name: "Web"
-              value: web
-            - name: "D3"
-              value: d3
-            - name: "Visualization"
-              value: visualization
-            - name: "R"
-              value: r
-            - name: "Python"
-              value: python
+            - name: "Trouble-shooting"
+              value: trouble-shooting
           alterable: true
       - name: "tags"
         field:

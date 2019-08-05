@@ -3,11 +3,11 @@ layout: post
 published: true
 title: Google Cloud Endpoints에 custom nginx.conf 적용하는 법
 mathjax: false
-featured: false
+featured: true
 comments: true
 headline: How to apply custom nginx.conf to Google Cloud Endpoints
 categories: Trouble-shooting
-tags: Trouble-shooting Google Cloud Kubernetes Nginx
+tags: Trouble-shooting Google-Cloud-Platform Kubernetes Nginx
 ---
 
 ![cover-image](/images/taking-notes.jpg)
