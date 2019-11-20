@@ -61,7 +61,7 @@ function VITERBI(O,S,π,Y,A,B) : X {
     T1[i][1] = π[i] * B[i][Y[1]]   // j == 1 이면 X = (x_1 = s_i) 이고, 이 경로가 발생할 확률은 π[i] * B[i][Y[1]] 다.
     T2[i][1] = 0                   // j == 1 이면 X = (x_1 = s_i) 이고, x_1의 이전의 경로 x_0는 존재하지 않는다 -> 0
   
-  // Observation sequence로 부터 hidden-state sequence가 생성되므로, 
+  // Observation sequence로 부터 hidden-state sequence가 생성되므로,
   // 먼저 Observation을 순서대로 순회하고, 이 때 모든 state에 대해서 각 부분 문제를 dynamic programming으로 해결한다.
   for each observation j = 2 to T:
     for each state i = 1 to K:
@@ -108,5 +108,5 @@ Viterbi 알고리즘의 시간 복잡도는 $O(NK^2)$ 라 할 수 있다. **그�
 
 ## Reference
 
-- https://untitledtblog.tistory.com/97
-- https://en.wikipedia.org/wiki/Viterbi_algorithm
+- [https://untitledtblog.tistory.com/97](https://untitledtblog.tistory.com/97)
+- [https://en.wikipedia.org/wiki/Viterbi_algorithm](https://en.wikipedia.org/wiki/Viterbi_algorithm)
