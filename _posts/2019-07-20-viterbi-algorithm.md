@@ -17,13 +17,13 @@ tags: Algorithm Speech-recognition
 $Viterbi$ 알고리즘은 HMM의 parameter가 주어졌을 때, 특정 observation이 나타날 확률이 가장 높은 state의 sequence($Viterbi \; path$)를 탐색하는 dynamic programming 알고리즘 이다.
 
 - Viterbi 알고리즘은 네트워크 분야의 [convolutional code]([https://en.wikipedia.org/wiki/Convolutional_code](https://en.wikipedia.org/wiki/Convolutional_code))를 decoding 하는데 사용되며, 이외에도 음성 인식 등의 다양한 분야에 사용된다.
-- Viterbi 알고리즘을 일반화 하면 max-sum(혹은 max-product) 알고리즘 이라고 할 수 있다.
+- Viterbi 알고리즘을 일반화하면 max-sum(혹은 max-product) 알고리즘 이라고 할 수 있다.
 
 HMM($Hidden \; Markov \; Model$)은 <$Q,Y,\pi,T,E$>의 tuple로 정의되며, 각 parameter는 아래와 같다.
 
 - $Q=\{q_1,q_2,...,q_N\}$ : Hidden states 집합
 - $Y=\{y_1,y_2,...,y_M\}$ : Hidden states 집합에서 발생할 수 있는 observation들의 집합
-- $\pi:ℝ^N$ : 초기 state가 $q_i$일 확률을 나타내는 initial probability $p(q_i)$의 집합
+- $\pi=ℝ^N$ : 초기 state가 $q_i$일 확률을 나타내는 initial probability $p(q_i)$의 집합
 - $T=ℝ^{N×N}$ : $q_i$에서 $q_j$로 이동 할 확률을 나타내는 transition probability $p(q_j \lvert q_i)$의 집합
   - 즉 transition이란 hiden state에서 hidden state로 변환되는 것을 뜻함
 - $E=ℝ^{N×M}$ : $q_i$에서 $y_j$가 발생할 확률을 나타내는 emission probability $p(y_j \lvert q_i)$의 집합
