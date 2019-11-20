@@ -18,7 +18,7 @@
      post.puts "image: "
      post.puts "  feature: "
      post.puts "comments: true"
-     post.puts "mathjax: "
+     post.puts "mathjax: true"
      post.puts "---"
    end
   end

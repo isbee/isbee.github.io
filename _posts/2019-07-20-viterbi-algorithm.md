@@ -7,7 +7,7 @@ featured: true
 comments: true
 headline: Introduction of Viterbi algorithm
 categories: Algorithm
-tags: Speech-recognition
+tags: Algorithm Speech-recognition
 ---
 
 ![cover-image](/images/taking-notes.jpg)
@@ -104,7 +104,7 @@ Viterbi 알고리즘의 코드는 짧은 편이지만, 각 파라미터가 어�
 
 ## Time Complexity
 
-Viterbi 알고리즘의 시간 복잡도는 $O(NK^2)$ 라 할 수 있다. **그러나 $T_1$, $A$, $B$가 adjacent list를 통해 graph로 표현된다면**, 각 edge를 $O(1)$로 탐색할 수 있으므로 $|E|$번의 순회로 $\operatorname{max}$나 $\operatorname{argmax}$연산을 완료할 수 있으며, 이 경우 시간 복잡도는 $O(N * (K + |E|))$ 이다.
+Viterbi 알고리즘의 시간 복잡도는 $O(NK^2)$ 라 할 수 있다. **그러나 $T_1,A,B$가 adjacent list를 통해 graph로 표현된다면**, 각 edge를 $O(1)$로 탐색할 수 있으므로 $|E|$번의 순회로 $\operatorname{max}$나 $\operatorname{argmax}$연산을 완료할 수 있으며, 이 경우 시간 복잡도는 $O(N * (K + |E|))$ 이다.
 
 ## Reference
 
