@@ -17,6 +17,9 @@ Description: Awesome dude, awesome life
 -->
 <head>
 {% include head.html %}
+{% if page.mathjax %}
+  {% include mathjax.html %}
+{% endif %}
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
 
