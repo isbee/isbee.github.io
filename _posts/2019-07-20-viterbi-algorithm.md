@@ -24,9 +24,9 @@ HMM($Hidden \; Markov \; Model$)은 <$Q,Y,\pi,T,E$>의 tuple로 정의되며, �
 - $Q=\{q_1,q_2,...,q_N\}$ : Hidden states 집합
 - $Y=\{y_1,y_2,...,y_M\}$ : Hidden states 집합에서 발생할 수 있는 observation들의 집합
 - $\pi:ℝ^N$ : 초기 state가 $q_i$일 확률을 나타내는 initial probability $p(q_i)$의 집합
-- $T:ℝ^{N×N}$ : $q_i$에서 $q_j$로 이동할 확률을 나타내는 transition probability $p(q_j | q_i)$의 집합
+- $T=ℝ^{N×N}$ : $q_i$에서 $q_j$로 이동 할 확률을 나타내는 transition probability $p(q_j | q_i)$의 집합
   - 즉 transition이란 hiden state에서 hidden state로 변환되는 것을 뜻함
-- $E:ℝ^{N×M}$ : $q_i$에서 $y_j$가 발생할 확률을 나타내는 emission probability $p(y_j | q_i)$의 집합
+- $E=ℝ^{N×M}$ : $q_i$에서 $y_j$가 발생할 확률을 나타내는 emission probability $p(y_j | q_i)$의 집합
   - 즉 emssion이란 hidden state에서 observation으로 변환되는 것을 뜻함
 
 Viterbi 알고리즘을 사용하면, 주어진 HMM에서 특정 observation이 발생할 확률이 가장 높은 state sequence를 알아낼 수 있다.
@@ -97,7 +97,7 @@ Viterbi 알고리즘의 코드는 짧은 편이지만, 각 파라미터가 어�
     1. 우선 주어진 observation sequence에서 마지막 원소를 observe할 확률이 가장 큰 state를 찾는다. 이는 $T_1$을 통해 알 수 있으며, 해당 state는 hidden state sequence 'global optimum'의 마지막 원소가 될 것이다.
         - 뒤에서 부터는 hidden state sequence 'global optimum'을 그냥 가장 확률이 높은 hidden state sequence로 명칭 한다.
     2. 이제 observation sequence를 역으로 순회한다. (앞서 찾은 state, 현재 observation) 쌍을 형성하고, 이를 $T_2$에 대입하면 hidden state sequence의 원소를 결정시키는 '이전' state를 얻을 수 있다. 해당 state는 가장 확률이 높은 hidden state sequence의 또 다른 원소가 될 것이다.
-    3. '이전' state를 가리키는 pointer를 유지하면 (앞서 찾은 state, 현재 observation) 쌍을 계속 형성할 수 있다. 따라서 2를 반복해 가장 확률이 높은 hidden state sequence를 완성한다.
+    3. '이전' state를 가리키는 pointer를 유지하면 (앞서 찾은 state, 현재 observation) 쌍을 계속 형성할 수 있다. 따라서 2.를 반복해 가장 확률이 높은 hidden state sequence를 완성한다.
 3. 역추적이 완료되면 주어진 observation sequence에 대응되는 최적의 state sequence, 즉 가장 확률이 높은 hidden state sequence가 결정된다.
 
 아직도 설명이 긴 느낌이 있지만, 큰 번호만 읽으면 Viterbi 알고리즘의 맥락을 보는데 도움이 될 것이라 생각한다.
