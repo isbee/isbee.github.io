@@ -7,7 +7,7 @@ featured: true
 comments: true
 headline: Introduction of Viterbi algorithm
 categories: Algorithm
-tags: Algorithm Speech-recognition
+tags: Algorithm Dynamic-programming Speech-recognition
 ---
 
 ![cover-image](/images/taking-notes.jpg)
