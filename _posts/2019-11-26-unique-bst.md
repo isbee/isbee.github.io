@@ -176,4 +176,4 @@ class Solution {
 
 ### Time Complexity on Unique BST 2 solution
 
-Memoization을 활용해 동일한 부분 문제를 반복해서 푸는 것을 방지했기 때문에, 중복 없이 $[i \sim j]$($1 <= i,j <= n$)의 unique BST를 생성하는 비용이 곧 시간 복잡도가 된다. ${}_n \mathrm{C}_2 ~= O(n^2)$ 이고, Tree 생성이 최악의 경우 O(N) 이므로, 최종 worst-case time complexity는 $O(n^3)$ 이다.
+Memoization을 활용해 동일한 부분 문제를 반복해서 푸는 것을 방지했기 때문에, ($1 <= i,j <= n$)에 대해 중복 없이 $[i \sim j]$의 unique BST를 생성하는 비용이 곧 시간 복잡도가 된다. ${}_n \mathrm{C}_2 ~= O(n^2)$ 이고, Tree 생성이 최악의 경우 O(N) 이므로, 최종 worst-case time complexity는 $O(n^3)$ 이다.
