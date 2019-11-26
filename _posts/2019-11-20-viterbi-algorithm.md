@@ -91,8 +91,8 @@ function VITERBI(O,S,π,Y,A,B) : X {
 Viterbi 알고리즘의 코드는 짧은 편이지만, 각 파라미터가 어떤 역할을 하는지 정확하게 이해하지 않으면 코드 또한 이해하기 어렵다. 이해를 돕기 위해 주석을 많이 달았지만 그로 인해 너무 번잡 해진 느낌이 있다. 내용을 요약하면 다음과 같다.
 
 1. Dynamic programming을 통해 아래 2가지의 정보를 전처리 한다.
-    - $(state, observation) = (s_i, y_j)$ 쌍에 대해, 가장 확률이 높은 hidden state sequence의 각 원소가 발생할 확률 계산 $->$ $T_1$
-    - $(state, observation) = (s_i, y_j)$ 쌍에 대해, 가장 확률이 높은 hidden state sequence의 원소를 결정시키는 '이전' state 탐색/저장 $->$ $T_2$
+    - $(state, observation) = (s_i, y_j)$ 쌍에 대해, 가장 확률이 높은 hidden state sequence의 각 원소가 발생할 확률 계산. $T_1$
+    - $(state, observation) = (s_i, y_j)$ 쌍에 대해, 가장 확률이 높은 hidden state sequence의 원소를 결정시키는 '이전' state 탐색/저장. $T_2$
 2. **각 (state, observation) 쌍에 대해 가장 확률이 높은 hidden state sequence를 완성했지만, 아직 각 observation에 대해 실제로 어떤 state를 선택해야 최적 인지는 알지 못한다. 여러 개의 local optimum은 찾았지만 global optimum은 찾지 못한 것이다.** 이는 $T_1$, $T_2$의 정보를 역추적 하면 구할 수 있다.
     1. 우선 주어진 observation sequence에서 마지막 원소를 observe할 확률이 가장 큰 state를 찾는다. 이는 $T_1$을 통해 알 수 있으며, 해당 state는 hidden state sequence 'global optimum'의 마지막 원소가 될 것이다.
         - 뒤에서 부터는 hidden state sequence 'global optimum'을 그냥 가장 확률이 높은 hidden state sequence로 명칭 한다.
