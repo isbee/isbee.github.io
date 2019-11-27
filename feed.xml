@@ -29,9 +29,7 @@ layout: none
     <uri>{{ site.url }}</uri>
     <email>{{ site.owner.email }}</email>
   </author>
-  <title>{{ post.title | xml_escape }}</title>
   <description>{{ post.content | xml_escape }}</description>
-  <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
 </entry>
 {% endfor %}
 </feed>
