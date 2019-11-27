@@ -51,7 +51,7 @@ $$F(i, n) = G(i-1) * G(n-i), 1 <= i <= n$$
 
 우리가 최종적으로 구하고자 하는 값은 $G(n)$이다. 이 값은 모든 $i$에 대해 $F(i, n)$를 구한 뒤 모두 더하면 계산할 수 있다.
 
-$$G(n) = F(1,n) + F(2,n) ... + F(n,n)$$
+$$G(n) = F(1,n) + F(2,n) + ... + F(n,n)$$
 
 ### Time Complexity on Unique BST solution
 
