@@ -29,7 +29,6 @@ layout: none
     <uri>{{ site.url }}</uri>
     <email>{{ site.owner.email }}</email>
   </author>
-  <description>{{ post.content | xml_escape }}</description>
 </entry>
 {% endfor %}
 </feed>
