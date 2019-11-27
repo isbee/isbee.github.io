@@ -55,9 +55,9 @@ $$G(n) = F(1,n) + F(2,n) + ... + F(n,n)$$
 
 ### Time Complexity on Unique BST solution
 
-위 solution의 시간 복잡도는 $O(N^2)$ 이다. 시간 복잡도가 높은 편이라고 할 수 있지만, BST를 실제로 생성하고 이것이 unique한 지 판별하는 형태로 구현한다면 시간 복잡도는 더욱 높아질 것이다.
+위 solution의 시간 복잡도는 $O(n^2)$ 이다. 시간 복잡도가 높은 편이라고 할 수 있지만, BST를 실제로 생성하고 이것이 unique한 지 판별하는 형태로 구현한다면 시간 복잡도는 더욱 높아질 것이다.
 
-Naive한 예시를 들어 보자면, 주어진 sequence에 대한 permutation을 만들고 각 원소를 순서대로 tree에 삽입하면 unique BST의 후보 군을 만들 수 있는데, 여기 까지만 해도 $O(N!)$ 이므로 비효율적임을 알 수 있다.
+Naive한 예시를 들어 보자면, 주어진 sequence에 대한 permutation을 만들고 각 원소를 순서대로 tree에 삽입하면 unique BST의 후보 군을 만들 수 있는데, 여기 까지만 해도 $O(n!)$ 이므로 비효율적임을 알 수 있다.
 
 ## Unique Binary Search Trees 2
 
@@ -176,4 +176,4 @@ class Solution {
 
 ### Time Complexity on Unique BST 2 solution
 
-Memoization을 활용해 동일한 부분 문제를 반복해서 푸는 것을 방지했기 때문에, ($1 <= i,j <= n$)에 대해 중복 없이 $[i \sim j]$의 unique BST를 생성하는 비용이 곧 시간 복잡도가 된다. ${}_n \mathrm{C}_2 ~= O(n^2)$ 이고, Tree 생성이 최악의 경우 O(N) 이므로, 최종 worst-case time complexity는 $O(n^3)$ 이다.
+Memoization을 활용해 동일한 부분 문제를 반복해서 푸는 것을 방지했기 때문에, ($1 <= i,j <= n$)에 대해 중복 없이 $[i \sim j]$의 unique BST를 생성하는 비용이 곧 시간 복잡도가 된다. ${}_n \mathrm{C}_2 ~= O(n^2)$ 이고, Tree 생성이 최악의 경우 O(n) 이므로, 최종 worst-case time complexity는 $O(n^3)$ 이다.
