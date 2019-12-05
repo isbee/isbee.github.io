@@ -45,7 +45,7 @@ class Solution {
 
 Unique BST는 주어진 sequence의 원소 $i$를 root로 하는 여러 개의 BST로 구성된다고 할 수 있다. 여기서 $i$가 root이고 길이가 $n$일 때 unique BST의 경우의 수 = $F(i,n)$ 라 하고, 단순히 길이가 $n$일 때의 unique BST 경우의 수 = $G(n)$라 하자. 그렇다면 $F(i,n)$은 **left/right subtree에 대한** $G(n)$ 값을 곱해서 구할 수 있으며, 아래와 같은 점화식을 세울 수 있다.
 
-$$F(i, n) = G(i-1) * G(n-i), 1 <= i <= n$$
+$$F(i, n) = G(i-1) * G(n-i), \quad 1 <= i <= n$$
 
 위 식에서 $G(i-1)$이 left subtree에 해당하며, $G(n-i)$가 right subtree에 해당한다. 두 개의 경우의 수는 서로 독립적이므로, 해당 값을 곱해서 $i$가 root이고 길이가 $n$일 때의 경우의 수를 구할 수 있다.
 
@@ -112,7 +112,7 @@ class Solution {
 }
 ```
 
-기존 점화식은 사용할 수 없지만 접근법은 동일하다. 하나의 순증가 수열 $[1 \sim n]$이 주어졌을 때 $i$ 번째 요소 보다 작은 값들은 $[1 \sim i-1]$에 위치하며, $i$ 번째 요소 보다 큰 값들은 $[i+1 \sim n]$에 위치한다. 따라서 $i$가 root일 때의 모든 unique BST는 left subtree $[1 \sim i-1]$와 right subtree $[i+1 \sim n]$의 unique BST를 포함하는 것과 같다. 그리고 모든 $i$에 대해 이 작업을 반복하면 최종적인 답을 도출해 낼 수 있다.
+기존 점화식은 사용할 수 없지만 접근법은 동일하다. 하나의 순증가 수열 $[1 \sim n]$이 주어졌을 때 $i$ 번째 요소 보다 작은 값들은 $[1 \sim (i-1)]$에 위치하며, $i$ 번째 요소 보다 큰 값들은 $[(i+1) \sim n]$에 위치한다. 따라서 $i$가 root일 때의 모든 unique BST는 left subtree $[1 \sim (i-1)]$와 right subtree $[(i+1) \sim n]$의 unique BST를 포함하는 것과 같다. 그리고 모든 $i$에 대해 이 작업을 반복하면 최종적인 답을 도출해 낼 수 있다.
 
 다만 단순 분할 정복을 하기보다는 memoization을 적용하는 게 좋다. Memoization을 적용한 코드는 아래와 같다.
 
