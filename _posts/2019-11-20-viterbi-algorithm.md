@@ -71,6 +71,7 @@ function VITERBI(O,S,π,Y,A,B) : X {
       // 이전 observation에서 구해놓은 T1 값을 활용하여 현재 T1 값을 구한다.
       T1[i][j] = max_{k}(T1[k][j-1] * A[k][i] * B[i][Y[j]])  // y_j를 observe하는 가장 확률이 큰 경로가 s_i(= x_j)일 때, 그 확률을 저장한다.
       T2[i][j] = argmax_{k}(T1[k][j-1] * A[k][i])            // y_j를 observe하는 가장 확률이 큰 경로가 s_i(= x_j)일 때, 그 확률을 일으켰던 state의 index(k)를 저장한다.
+                                                             // T2를 계산할 때 B를 사용하지 않는 이유는, T1 계산에서 본 것처럼 B에 k를 사용하지 않으며, B는 확률이라 non-negative 하므로, 결과적으로 argmax 계산에 영향을 끼치지 않기 때문이다.
   
   // Z[1..T]: 완성된 T2로 부터 경로를 역추적 하는 pointer. X를 생성하는데 사용된다.
   initialize Z[1..T], X[1..T]
