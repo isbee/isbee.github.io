@@ -56,11 +56,11 @@ Metaflow는 기존에 사용되고 있는 infrastructure를 활용해 개발되�
 
 Metaflow가 위 stack을 어떻게 구현했는지 보고 싶다면 아래 post를 읽어보길 바란다.
 
-[Metaflow's approach on the Data Science Stack](https://https://isbee.github.io/data-pipeline/Metaflows-approach-on-the-Data-Science-Stack)
+[Metaflow's approach on the Data Science Stack](https://isbee.github.io/data-pipeline/Metaflows-approach-on-the-Data-Science-Stack)
 
 ## The Philosophy of Metaflow
 
-Metaflow는 데이터 사이언티스트가 겪는 practical problem을 다루기 위해 디자인 됐으며, [Netflix culture]([https://jobs.netflix.com/culture](https://jobs.netflix.com/culture))에 영감을 받았다.
+Metaflow는 데이터 사이언티스트가 겪는 practical problem을 다루기 위해 디자인 됐으며, [Netflix culture](https://jobs.netflix.com/culture)에 영감을 받았다.
 
 1. Grounded on common, real-life business-oriented ML use cases
 2. Manage entropy with code

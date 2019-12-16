@@ -36,7 +36,7 @@ Use cases
 
 데이터를 JSON 형태로 S3에 저장하는 것도 가능하다. Metaflow는 Python 코드에서 `self` 키워드를 사용하면 해당 데이터는 자동적으로 S3에 저장되며, 모든 pipeline step에서 data artifact로서 접근할 수 있다.
 
-이러한 Metaflow artifact를 다룰 때는 [Client API]([https://docs.metaflow.org/metaflow/client](https://docs.metaflow.org/metaflow/client))를 사용하는 걸 추천한다.
+이러한 Metaflow artifact를 다룰 때는 [Client API](https://docs.metaflow.org/metaflow/client)를 사용하는 걸 추천한다.
 
 물론 `metaflow.S3` 로 직접 S3에 접근하는 것 역시 가능하다. 보통 써드 파티 시스템의 데이터를 소비하거나, 써드 파티로 데이터를 보낼 때 사용한다.
 
