@@ -68,6 +68,8 @@ Metaflow는 graph가 정적으로 정의되는 것을 요구한다. 이로 인�
 
 Step은 체크포인트다. Metaflow는 step으로 생성된 데이터의 snapshot을 유지하여, 뒤이은 step의 input으로써 활용한다. **Snapshot이 유지되기 때문에 step이 실패하더라도 이전 step을 재실행 할 필요가 없다.**
 
+> Metaflow의 핵심은 snapshot이라고 봐도 무방한 것 같습니다. 비슷한 프레임워크인 [Airflow](https://airflow.apache.org/)는 snapshot 기능을 지원하지 않는 걸로 알고 있습니다.
+
 - [flowspec.py](https://github.com/Netflix/metaflow/blob/master/metaflow/flowspec.py) - steps belong to a flow
 
 ### Decorators
