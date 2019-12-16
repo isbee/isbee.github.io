@@ -16,7 +16,7 @@ tags: metaflow, data-pipeline
 
 이 글은 Metaflow을 아우르는 기술에 대해 다룬다. 따라서 아래 글을 읽지 않았다면 먼저 읽어볼 것을 추천한다.
 
-[Basics of Metaflow](https://isbee.github.io/data-pipeline/basics-of-metaflow)
+- [Basics of Metaflow](https://isbee.github.io/data-pipeline/basics-of-metaflow)
 
 Metaflow는 다음 4가지의 핵심 기능을 바탕으로 디자인 됐다
 
