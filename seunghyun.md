@@ -4,10 +4,10 @@ permalink: /seunghyun/index.html
 title: Seunghyun Lee
 tags: [About Me]
 image:
-  feature: seunghyun.jpg
+  feature: seunghyun_new.jpeg
 ---
 
-<img src="{{ site.url }}/images/seunghyun_new.jpeg" alt="Seunghyun Lee">
+![seunghyun](/images/seunghyun_new.jpeg){: width="540" height="720"}
 
 2020.02 ~ : **[PUBG corp](https://www.pubg.com/ko/)**, Software Engineer
 
