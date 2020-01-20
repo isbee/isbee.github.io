@@ -9,7 +9,7 @@ image:
 
 ![seunghyun](/images/seunghyun_new.jpeg){: width="540" height="720"}
 
-2020.02 ~ : **[PUBG corp](https://www.pubg.com/ko/)**, Software Engineer
+2020.02 ~ : **[PUBG corp](https://www.pubg.com/)**, Software Engineer
 
 2019.06 ~ 2020.01: **[Deeply](https://deeply.co.kr/)**, Software Engineer
 
