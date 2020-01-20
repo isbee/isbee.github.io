@@ -37,8 +37,8 @@ gRPC는 프로토콜 이므로 L4/L7 proxy를 골라서 사용하는 것도 물�
 L4 부하 분산기는 패킷의 `(Src IP, Dest IP, Port)` 를 기준으로 부하를 분산한다. L4 부하 분산 동작 원리는, client의 패킷이 도달했을 때 해당 패킷의 Dest IP를 NAT로 변환시켜서 적절한 server로 forwarding 하는 방식이다. 역으로 server에서 보낸 패킷을 forwarding할 때는 Src IP를 부하 분산기 자신의 IP 주소로 변경한다.
 
 - Port 번호는 바뀔 수도 있고, 바뀌지 않을 수도 있다.
-- 또한 L4 부하 분산기는 VIP(Virtual IP)라는 가상 IP를 사용한다.
-- IP address를 사용한다는 점 때문에 'L3/L4 부하 분산기' 라고 부르기도 한다.
+- NAT로 변경된 주소를 VIP(Virtual IP)라고 부른다
+- IP address를 사용한다는 점 때문에 'L3/L4 부하 분산기' 라고 부르기도 한다
 
 L4 부하 분산기의 특징은 다음과 같다
 

@@ -157,7 +157,7 @@ Streaming sidecar container는 **애플리케이션 단독의 stdout, stderr 만
     # Mon Jan  1 00:00:02 UTC 2001 INFO 2
     # ...
 
-다만 streaming sidecar container의 stdout으로 인해 로그가 중복으로 발생하므로, 저장 공간이 부족하다면 이 방식을 사용하지 말아야 한다.
+다만 애플리케이션에서 로그를 파일로 남기고, streaming sidecar container가 stdout하면 로그가 중복으로 발생하므로, 저장 공간이 부족하다면 이 방식을 사용하지 말아야 한다.
 
 ### Sidecar container with a logging agent
 
