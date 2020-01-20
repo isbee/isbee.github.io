@@ -7,7 +7,7 @@ image:
   feature: seunghyun.jpg
 ---
 
-<img src="{{ site.url }}/images/seunghyun.jpeg" alt="Seunghyun Lee">
+<img src="{{ site.url }}/images/seunghyun_new.jpeg" alt="Seunghyun Lee">
 
 2020.02 ~ : **[PUBG corp](https://www.pubg.com/ko/)**, Software Engineer
 
